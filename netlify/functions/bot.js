@@ -17,6 +17,7 @@ exports.handler = async (event, context) => {
   // console.log(event.body);
   let body = event.body
   console.log(body);
+  bot.handleUpdate(event.body)
   // const bodyObject = JSON.parse(body)
   // console.log(bodyObject);
   return {

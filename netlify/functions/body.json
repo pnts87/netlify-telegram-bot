@@ -1,0 +1,2 @@
+{"update_id":777352776,
+  "message":{"message_id":23,"from":{"id":266586877,"is_bot":false,"first_name":"pnts87","username":"pnts87","language_code":"en"},"chat":{"id":266586877,"first_name":"pnts87","username":"pnts87","type":"private"},"date":1646641270,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}
