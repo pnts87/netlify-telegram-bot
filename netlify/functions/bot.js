@@ -6,7 +6,9 @@ if (token === undefined) {
   throw new Error('BOT_TOKEN must be provided!')
 }
 
-const bot = new Telegraf(token)
+const bot = new Telegraf(token, {
+  telegram: { webhookReply: true },
+})
 
 bot.start(ctx => {
   ctx.reply("Serverless function tutorial")
@@ -17,7 +19,7 @@ exports.handler = async (event, context) => {
   // console.log(event.body);
   let body = event.body
   console.log(body);
-  bot.handleUpdate(event.body)
+  await bot.handleUpdate(event.body)
   // const bodyObject = JSON.parse(body)
   // console.log(bodyObject);
   return {
