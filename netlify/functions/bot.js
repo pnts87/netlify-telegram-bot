@@ -12,12 +12,10 @@ bot.start(ctx => {
   ctx.reply("Serverless function tutorial")
 })
 
-// bot.launch()
-
 exports.handler = async (event, context) => {
-  bot.handleUpdate(event.body)
+  console.log(event);
   return {
     statusCode: 200,
-    body: event.body,
+    body: "OK",
   }
 }
