@@ -14,6 +14,7 @@ bot.start(ctx => {
 
 exports.handler = async (event, context) => {
   console.log(event);
+  console.log(event.body);
   return {
     statusCode: 200,
     body: "OK",
