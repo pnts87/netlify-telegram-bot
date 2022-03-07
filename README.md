@@ -3,11 +3,18 @@
 ## aws lamda
 ```js
 exports.handler = async (event, context) => {
+  if(event.body === "") {
+    return {
+      statusCode: 200,
+      body: "OK",
+    }
+  }
+
   const tmp = JSON.parse(event.body)
-  bot.handleUpdate(tmp)
+  await bot.handleUpdate(tmp)
   return {
     statusCode: 200,
-    body: "",
+    body: "OK",
   }
 }
 ```
