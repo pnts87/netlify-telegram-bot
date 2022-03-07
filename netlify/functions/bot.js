@@ -9,6 +9,7 @@ bot.start(ctx => {
 // bot.launch()
 
 exports.handler = async (event, context) => {
+  console.log(event);
   const tmp = JSON.parse(event.body)
   bot.handleUpdate(tmp)
   return {
