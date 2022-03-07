@@ -1,15 +1,12 @@
 require("dotenv").config()
 const { Telegraf } = require("telegraf")
-const makeHandler = require("lambda-request-handler")
 
 const token = process.env.BOT_TOKEN
 if (token === undefined) {
   throw new Error('BOT_TOKEN must be provided!')
 }
 
-const bot = new Telegraf(token, {
-  telegram: { webhookReply: true }
-})
+const bot = new Telegraf(token)
 
 bot.start(ctx => {
   ctx.reply("Serverless function tutorial")
@@ -17,6 +14,9 @@ bot.start(ctx => {
 
 // bot.launch()
 
-exports.handler = makeHandler(
-  bot.webhookCallback(process.env.WEBHOOK_PATH)
-)
+exports.handler = async (event, context) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(event),
+  }
+}
