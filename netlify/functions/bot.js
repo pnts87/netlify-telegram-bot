@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
   // bot.handleUpdate(tmp)
   return {
     statusCode: 200,
-    body: JSON.stringify(event),
+    body: JSON.stringify(context),
   }
 }
 
