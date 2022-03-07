@@ -9,12 +9,12 @@ bot.start(ctx => {
 // bot.launch()
 
 exports.handler = async (event, context) => {
-  console.log(event);
+  // console.log(event);
   // const tmp = JSON.parse(event.body)
   // bot.handleUpdate(tmp)
   return {
     statusCode: 200,
-    body: "test without JSON",
+    body: event,
   }
 }
 
