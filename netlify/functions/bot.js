@@ -15,14 +15,15 @@ bot.start(ctx => {
 })
 
 exports.handler = async (event, context) => {
-  // console.log(event);
-  // console.log(event.body);
-  let body = event.body
-  console.log(body);
+  if(event.body === "") {
+    return {
+      statusCode: 200,
+      body: "OK",
+    }
+  }
+
   const tmp = JSON.parse(event.body)
   await bot.handleUpdate(tmp)
-  // const bodyObject = JSON.parse(body)
-  // console.log(bodyObject);
   return {
     statusCode: 200,
     body: "OK",
