@@ -15,7 +15,7 @@ bot.start(ctx => {
 exports.handler = async (event, context) => {
   // console.log(event);
   // console.log(event.body);
-  let body = JSON.parse(event.body)
+  let body = event.body
   console.log(body);
   return {
     statusCode: 200,
