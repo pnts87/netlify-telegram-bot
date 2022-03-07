@@ -13,7 +13,7 @@ exports.handler = async (event, context) => {
   bot.handleUpdate(tmp)
   return {
     statusCode: 200,
-    body: JSON.stringify({ message: "RUNNING"}),
+    body: "",
   }
 }
 
